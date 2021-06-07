@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.rd'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly('org.projectlombok:lombok:1.18.16')
+	annotationProcessor('org.projectlombok:lombok:1.18.16')
+
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'software.amazon.awssdk:dynamodb-enhanced:2.16.15'
+	implementation 'software.amazon.awssdk:aws-crt-client:2.16.54-PREVIEW'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+}
+
+test {
+	useJUnitPlatform()
+}

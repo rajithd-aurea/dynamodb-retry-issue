@@ -1,0 +1,14 @@
+logging:
+  level:
+    software:
+      amazon:
+        awssdk: debug
+
+application:
+  key: PROFILE#1
+  dynamdb:
+    table: profile
+    numberOfRetries: 50
+    timeout: 100
+    baseDelay: 10
+    maxBackOff: 100
